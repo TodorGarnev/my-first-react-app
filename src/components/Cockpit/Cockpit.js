@@ -1,7 +1,7 @@
 import React from 'react'
 
 import classes from './Cockpit.css'
-import Aux from '../../hoc/Aux'
+import Aux from '../../hoc/Auxiliary'
 
 const cockpit = (props) => {
     const assignedClasses = []
@@ -9,7 +9,6 @@ const cockpit = (props) => {
 
     if (props.showPersons) {
         btnClass = [classes.Button, classes.Red].join(' ')
-        console.log(btnClass)
     }
 
     if (props.persons.length <= 2) {
