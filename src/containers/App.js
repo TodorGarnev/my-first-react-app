@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import classes from './App.css';
 import Persons from '../components/Persons/Persons'
 import Cockpit from '../components/Cockpit/Cockpit'
+import WithClass from '../hoc/WithClasss'
 
 
 class App extends Component {
@@ -10,7 +11,8 @@ class App extends Component {
       { id: '1', name: "Max", age: 28 },
       { id: '2', name: "Manu", age: 29 },
       { id: '3', name: "Stephanie", age: 25 }
-    ]
+    ],
+    showPersons: false
   }
 
   nameChangedHandler = (event, id) => {
@@ -52,12 +54,12 @@ class App extends Component {
     }
 
     return (
-      <div className={classes.App}>
+      <WithClass classes={classes.App}>
         <Cockpit showPersons={this.state.showPersons}
           persons={this.state.persons}
           clicked={this.togglePersonsHandler} />
         {persons}
-      </div>
+      </WithClass>
     );
   }
 }
